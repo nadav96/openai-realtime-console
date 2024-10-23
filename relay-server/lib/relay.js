@@ -9,7 +9,7 @@ export class RealtimeRelay {
   }
 
   listen(port) {
-    this.wss = new WebSocketServer({ port });
+    this.wss = new WebSocketServer({ host: '0.0.0.0', port });
     this.wss.on('connection', this.connectionHandler.bind(this));
     this.log(`Listening on ws://localhost:${port}`);
   }
